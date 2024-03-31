@@ -1,0 +1,57 @@
+body
+    background-color: black
+    display: grid
+    place-content: center
+    height: 90vh
+
+*
+  box-sizing: border-box
+
+$size: 200px
+$per_75: calc($size *.75)
+$per_12: calc($size *.125)
+$per_50: calc($size *.5)
+$per_25: calc($size *.25)
+div
+    height: $size
+    width: $size
+    position: relative
+    div
+        position: absolute
+        border-radius: 100%
+        border: solid 20px white
+        border-bottom: solid 20px transparent
+#b  
+    height: $per_75
+    width: $per_75
+    left : $per_12
+    top : $per_12
+#c 
+    height: $per_50
+    width: $per_50
+    left : $per_25
+    top : $per_25
+
+@keyframes spin 
+    0%
+        transform: rotate(0deg)
+        border-bottom-color: gray
+    30%
+        border-bottom-color: black
+    70% 
+        border-bottom-color: black
+    100%
+       transform: rotate(360deg)
+       border-bottom-color: gray
+#a
+    animation: spin 3s linear infinite
+#b
+    animation: spin 1.5s linear infinite
+#c
+    animation: spin .75s linear infinite
+
+
+
+
+
+

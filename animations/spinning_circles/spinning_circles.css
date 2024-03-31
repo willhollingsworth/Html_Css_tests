@@ -1,0 +1,64 @@
+body {
+  background-color: black;
+  display: grid;
+  place-content: center;
+  height: 90vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+div {
+  height: 200px;
+  width: 200px;
+  position: relative;
+}
+div div {
+  position: absolute;
+  border-radius: 100%;
+  border: solid 20px white;
+  border-bottom: solid 20px transparent;
+}
+
+#b {
+  height: 150px;
+  width: 150px;
+  left: 25px;
+  top: 25px;
+}
+
+#c {
+  height: 100px;
+  width: 100px;
+  left: 50px;
+  top: 50px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    border-bottom-color: gray;
+  }
+  30% {
+    border-bottom-color: black;
+  }
+  70% {
+    border-bottom-color: black;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-bottom-color: gray;
+  }
+}
+#a {
+  animation: spin 3s linear infinite;
+}
+
+#b {
+  animation: spin 1.5s linear infinite;
+}
+
+#c {
+  animation: spin 0.75s linear infinite;
+}/*# sourceMappingURL=spinning_circles.css.map */
