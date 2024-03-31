@@ -1,0 +1,29 @@
+body {
+  background-color: black;
+  display: grid;
+  place-content: center;
+  height: 90vh;
+}
+
+#square {
+  width: 100px;
+  height: 100px;
+  background-color: aliceblue;
+  border: 5px solid blue;
+}
+#square:before {
+  content: "";
+  height: 10px;
+  display: block;
+  background-color: red;
+}
+#square:after {
+  position: relative;
+  top: 80px;
+  left: 10px;
+  content: "";
+  width: 80px;
+  height: 10px;
+  display: block;
+  background-color: lawngreen;
+}/*# sourceMappingURL=psu1.css.map */
