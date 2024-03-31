@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            margin-left: 5vw;
+            margin-right: 5vw;
+            display:flex ;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1{
+            font-size: 4em;
+            width:fit-content;
+            background-clip: text;
+            color: transparent;
+ 
+        }
+        h1:nth-of-type(1){
+            background-image: linear-gradient( rgb(54, 168, 255), rgb(0, 255, 132));
+        }
+        h1:nth-of-type(2){
+            background-image: radial-gradient( rgb(54, 168, 255), rgb(0, 255, 132));
+        }
+        </style>
+</head>
+<body>
+    <div>
+        <h1>
+            Default linear gradient
+        </h1>
+        <h1>
+            Default radial gradient
+        </h1>
+    </div>
+</body>
+</html>
