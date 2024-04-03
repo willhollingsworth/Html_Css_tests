@@ -1,5 +1,3 @@
-## Testing various html and CSS stuff
-
 #### Animations
 
 * [Moving border](https://willhollingsworth.github.io/Html_Css_tests/animations/moving_border.html)
