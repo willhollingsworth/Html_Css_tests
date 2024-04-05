@@ -1,0 +1,14 @@
+@mixin grad1 {
+    background-image: linear-gradient(
+        transparent,
+        orange,
+        green,
+        blue);
+}
+@mixin grad2 {
+    background-image: linear-gradient(
+        transparent,
+        orange,
+        green,
+        blue);
+}

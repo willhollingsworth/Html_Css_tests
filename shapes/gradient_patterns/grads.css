@@ -1,0 +1,14 @@
+body {
+  background-color: black;
+  display: grid;
+  place-items: center;
+  height: 90% svh;
+  gap: 0.5em;
+}
+
+div {
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  background-image: linear-gradient(transparent, red);
+}/*# sourceMappingURL=grads.css.map */

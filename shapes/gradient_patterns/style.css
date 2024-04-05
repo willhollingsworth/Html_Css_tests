@@ -1,0 +1,22 @@
+body {
+  background-color: black;
+  display: grid;
+  place-items: center;
+  height: 90% svh;
+  gap: 0.5em;
+}
+
+div {
+  height: 50px;
+  width: 50px;
+  background-color: white;
+}
+div:nth-child(1) {
+  background-image: linear-gradient(transparent, red);
+}
+div:nth-child(2) {
+  background-image: linear-gradient(transparent, orange, green, blue);
+}
+div:nth-child(3) {
+  background-image: linear-gradient(transparent, orange, green, blue);
+}/*# sourceMappingURL=style.css.map */

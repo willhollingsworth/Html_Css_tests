@@ -1,0 +1,22 @@
+@use 'gradients'
+// workaround for lack of multiline support
+body
+    background-color: black
+    display: grid
+    place-items: center
+    height: 90%svh
+    gap: 0.5em
+div
+    $size: 50px
+    height: $size
+    width: $size
+    background-color: white
+    &:nth-child(1)
+        background-image: linear-gradient(transparent, red)
+    &:nth-child(2)
+        // sass doesn't support multiline arguments, a workaround is to import a scss file
+        @include gradients.grad1
+    &:nth-child(3)
+        // sass doesn't support multiline arguments, a workaround is to import a scss file
+        @include gradients.grad2
+        
