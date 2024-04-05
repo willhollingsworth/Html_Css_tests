@@ -1,31 +1,34 @@
 body 
     background-color: black
     display: grid
+    gap: 20px
+    grid-template-columns: auto auto auto
     place-content: center
     height: 90vh
 
-#square 
+div 
     $size: 100px
+    $border: 5px
     width: $size
     height: $size
     background-color: aliceblue
-    border: 5px solid blue
+    border: $border solid blue
+    position: relative
 
-    &:before
+    &:before, &:after
         content: ''
-        height: 10px
-        display: block
-        background-color: red
-        
+        position: absolute
+        height: $size / 2.1
+        width: $size+6px
+        opacity: 70%
+        left: -8px
+
+    &:before    
+        top: -8px
+        border: $border solid red
+        border-bottom: $border solid transparent
     &:after
-        position: relative
-        top: 80px
-        left: 10px
-        // bottom: 80px
-        // right: 0
-        content: ''
-        width: $size * .8 // 80%
-        height: 10px
-        display: block
-        background-color: lawngreen
+        bottom: -8px
+        border: $border solid lawngreen
+        border-top: $border solid transparent
 
