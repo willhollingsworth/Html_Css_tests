@@ -1,4 +1,5 @@
 function validate(){
+    // grab all items that are an input
     const INPUTS = document.querySelectorAll('input');
     let checks = {};
     let checkKeys = [];
@@ -6,7 +7,7 @@ function validate(){
     let fail_index = 0;
 
     for(let field of INPUTS){
-        // list all checks below, they should match true if it's a pass
+        // create an object that contains the check's name and it's check conditions
         checks = {
             'too small' : field.value.length > 0,
             'too large' : field.value.length < 6,
@@ -16,7 +17,9 @@ function validate(){
         checkValues = Object.values(checks);
         // if any check fails
         if (checkValues.includes(false)){
-            fail_index = checkValues.findIndex((x) => x == false)
+            // find the index of the first failed check
+            fail_index = checkValues.findIndex((x) => x == false);
+            // log the associated check's key
             console.log(field.id + ' is failing check: ' + checkKeys[fail_index] );
             return;
         }
