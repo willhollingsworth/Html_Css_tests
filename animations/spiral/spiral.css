@@ -12,8 +12,8 @@ div div {
   position: absolute;
   content: "";
   border-radius: 100%;
-  width: min(20vh, 20vw);
-  height: min(30vh, 30vw);
-  border-left: 2px solid transparent;
+  width: min(40vh, 30vw);
+  height: min(40vh, 50vw);
+  border-left: min(1vh, 1vw) solid transparent;
   transform-origin: 50% 0%;
 }/*# sourceMappingURL=spiral.css.map */
