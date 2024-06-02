@@ -35,3 +35,7 @@ legend {
 .flex{
     display: flex;
 }
+#errors{
+    width: 40vw;
+    text-align: center;
+}
