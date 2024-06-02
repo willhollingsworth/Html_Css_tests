@@ -24,3 +24,6 @@
 #### Text
 
 * [Gradient Text](https://willhollingsworth.github.io/Html_Css_tests/text/gradient_text.html)
+* 
+#### JavaScript
+* [Field Validations](https://willhollingsworth.github.io/Html_Css_tests/js/field_validations/index.html)
