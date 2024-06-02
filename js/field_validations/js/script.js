@@ -1,11 +1,17 @@
 function buttonClick(){
-    let results = validate();
+    // setup headers
+    let results = [['Field','Error']];
+    // populate list with validation results
+    results = results.concat(validate());
+    // select the error div
     errorBox = document.getElementById("errors");
     removeAllChildren(errorBox);
+    // populate error div with validation results
     addMultipleDivs(errorBox, results);
 }
 
 function removeAllChildren(parent){
+    // remove all children of a parent element
     let children;
     try {
         children = parent.children;
@@ -20,10 +26,13 @@ function removeAllChildren(parent){
 }
 
 function addMultipleDivs(parent, list){
-    for (let item of list){
-        let newDiv = document.createElement("div");
-        newDiv.innerHTML = item;
-        parent.appendChild(newDiv);
+    // add divs to a parent based on a list of items
+    for (let row of list){
+        for (let item of row){
+            let newDiv = document.createElement("div");
+            newDiv.innerHTML = item;
+            parent.appendChild(newDiv);
+        }
     }
 }
 
@@ -49,7 +58,7 @@ function validate(){
         for (let key in checks){
             value = checks[key];
             if (!value){
-                results.push(field.id + ' is failing check: ' + key);
+                results.push([field.name, key]);
             }
         }
     }

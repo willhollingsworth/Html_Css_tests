@@ -36,6 +36,8 @@ legend {
     display: flex;
 }
 #errors{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     width: 40vw;
     text-align: center;
 }
