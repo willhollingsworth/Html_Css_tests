@@ -41,3 +41,11 @@ legend {
     width: 40vw;
     text-align: center;
 }
+
+/* style the headers */
+#errors div:nth-child(-n+2){
+    font-weight: bold;
+    font-size: larger;
+}
+
+
