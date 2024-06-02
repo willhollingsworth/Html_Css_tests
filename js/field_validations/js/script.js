@@ -1,8 +1,15 @@
 function buttonClick(){
     // setup headers
-    let results = [['Field','Error']];
+    let results = [];
     // populate list with validation results
-    results = results.concat(validate());
+    let validationResults =validate()
+    if (validationResults.length > 0) {
+        results = [['Field', 'Error']]
+        results = results.concat(validate());
+    } else{
+        results = [[[],[]], [['No errors found'],[]]]
+    }
+    validationResults
     // select the error div
     errorBox = document.getElementById("errors");
     removeAllChildren(errorBox);
