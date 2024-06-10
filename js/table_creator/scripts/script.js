@@ -88,18 +88,14 @@ function buildTable(data){
     let tableMainElement = document.createElement('table');
 
     //create the headers
-    let headersData = ['user id','name','company']
-    let tableHeaderElement = document.createElement('thead');
-    let headersRow = buildRowSingle(headersData,'th');
-    tableHeaderElement.appendChild(headersRow);
-    tableMainElement.appendChild(tableHeaderElement);
+    // let headersData = ['user id','name','company']
+    // let tableHeaderElement = document.createElement('thead');
+    // let headersRow = buildRowSingle(headersData,'th');
+    // tableHeaderElement.appendChild(headersRow);
+    // tableMainElement.appendChild(tableHeaderElement);
 
     //create the other rows
-    sampleData =[
-        ["a", "b", "c"],
-        ["d", "e", "f"],
-    ]
-    let tableBodyElement = buildRowMultiple(sampleData)
+    let tableBodyElement = buildRowMultiple(data)
     tableMainElement.appendChild(tableBodyElement);
 
     // // Adding the table to the main html body element
@@ -110,7 +106,7 @@ try {
     console.log('run via node')
     console.log(buildSampleData())
 } catch {
-    buildTable();
+    buildTable(buildSampleData());
 }
 // https://www.valentinog.com/blog/html-table/
 // more example code
