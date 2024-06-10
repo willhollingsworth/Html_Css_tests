@@ -19,21 +19,44 @@ function getRandomCharMultiple(length) {
     }  
     return out
 }
+function getRandomBoolean() {
+    return getRandomIntSingle(0, 1) == true
+}
+
 function charToCode(char) {
     return char.charCodeAt(0);
 }
 function codeToChar(code) {
     return String.fromCharCode(code);
 }
-function buildSampleData(length){
-    out = [];
-    for (i of new Array(length)){
+
+function buildSampleData(rows = 3, columns = 3){
+    let out = [], columns_settings = [];
+
+    //loop over each row
+    for (i of new Array(rows).keys()){
         let entry = [];
-        entry.push(getRandomCharMultiple(6));
-        entry.push(getRandomCharMultiple(2));
-        entry.push(getRandomIntMultiple(4));
-        entry.push(getRandomIntMultiple(10));
-        entry.push(getRandomIntMultiple(6));
+        // loop over each column
+        for (j of new Array(columns).keys()){
+            let length, type;
+            // if column settings are not set up then assign a type and length
+            if (!columns_settings[j]){
+                length = getRandomIntSingle(3,10);
+                type = getRandomBoolean();
+                columns_settings.push([length, type]);
+            } else {
+                // if column settings are setup then use previous settings
+                [length, type] = columns_settings[j];
+            }
+            if (type){
+                // push random characters to list
+                entry.push(getRandomCharMultiple(length));
+            } else {
+                // push random numbers to list
+                entry.push(getRandomIntMultiple(length));
+            }
+        }
+        // write the entire row the the output var
         out.push(entry);
     }  
     return out
@@ -56,6 +79,8 @@ function buildRowMultiple(data, type){
     }
     return tableBodyElement;
 }
+
+
 function buildTable(data){
     /* build a html table */
 
@@ -81,8 +106,6 @@ function buildTable(data){
     document.body.appendChild(tableMainElement);
 }
 buildTable();
-
-
 // https://www.valentinog.com/blog/html-table/
 // more example code
   
