@@ -105,7 +105,13 @@ function buildTable(data){
     // // Adding the table to the main html body element
     document.body.appendChild(tableMainElement);
 }
-buildTable();
+try {
+    module.parent
+    console.log('run via node')
+    console.log(buildSampleData())
+} catch {
+    buildTable();
+}
 // https://www.valentinog.com/blog/html-table/
 // more example code
   
