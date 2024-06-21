@@ -31,14 +31,14 @@ function codeToChar(code) {
 }
 
 function buildSampleData(rows = 3, columns = 3){
-    let out = [], columns_settings = [];
-
+    let out = [], columns_settings = [], entry = [];
+    let length, type;
     //loop over each row
-    for (i of new Array(rows).keys()){
-        let entry = [];
+    for (let i of Array(rows).keys()){
+        entry = [];
         // loop over each column
-        for (j of new Array(columns).keys()){
-            let length, type;
+        for (let j of Array(columns).keys()){
+            
             // if column settings are not set up then assign a type and length
             if (!columns_settings[j]){
                 length = getRandomIntSingle(3,10);
@@ -59,12 +59,14 @@ function buildSampleData(rows = 3, columns = 3){
         // write the entire row the the output var
         out.push(entry);
     }  
+
+    console.table(out);
     return out
 }
 
 function buildRowSingle(data, type){
     let tableRow = document.createElement('tr');
-    for (i of data){
+    for (let i of data){
         let entry = document.createElement(type);
         entry.innerHTML = i;
         tableRow.appendChild(entry);
@@ -73,13 +75,12 @@ function buildRowSingle(data, type){
 }
 function buildRowMultiple(data, type){
     let tableBodyElement = document.createElement('tbody');
-    for (i of data){
+    for (let i of data){
         let row = buildRowSingle(i, 'td');
         tableBodyElement.appendChild(row);
     }
     return tableBodyElement;
 }
-
 
 function buildTable(data){
     /* build a html table */
@@ -101,13 +102,35 @@ function buildTable(data){
     // // Adding the table to the main html body element
     document.body.appendChild(tableMainElement);
 }
+
+function updateSlider() {
+    let columnsSelected = document.getElementById("columns").value;
+    let rowsSelected = document.getElementById("rows").value;
+    deleteTable();
+    buildTable(buildSampleData(rowsSelected, columnsSelected));
+}
+
+function deleteTable(){
+    let tableElement = document.querySelectorAll('table')[0];
+    document.body.removeChild(tableElement);
+}
+
+// first run, detect if run via node for debugging purposes
 try {
     module.parent
-    console.log('run via node')
-    console.log(buildSampleData())
+    // console.log('run via node')
+    buildSampleData()
+    buildSampleData(5,5)
+    // console.table(buildSampleData(5,5))
+    // console.table(buildSampleData(3,5))
 } catch {
     buildTable(buildSampleData());
 }
+
+
+
+
+
 // https://www.valentinog.com/blog/html-table/
 // more example code
   
