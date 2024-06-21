@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>CSS Grid Creator</title>
+    <link rel="stylesheet" href="styles/style.css" type="text/css">
+    <script src="scripts/script.js" defer></script>
+</head>
+<body>
+    <div id="grid">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+    <div id="toolbar">
+        <h1>Grid Properties</h1>
+        <span>
+            <label for="columns">Columns: </label>
+            <input type="number" name="columns" />
+        </span>
+        <span>
+            <h4>Justify Items</h4>
+            <input type="radio" id="jusStart" name="justify"/>
+            <label for="jusStart">Start</label>
+            <input type="radio" id="jusEnd" name="justify"/>
+            <label for="jusEnd">End</label>
+            <input type="radio" id="jusCenter" name="justify"/>
+            <label for="jusCenter">Center</label>
+            <input type="radio" id="jusStretch" name="justify"/>
+            <label for="jusStretch">Stretch</label>
+        </span>
+        <span>
+            <h4>Align Items</h4>
+            <input type="radio" id="alignStart" name="align"/>
+            <label for="alignStart">Start</label>
+            <input type="radio" id="alignEnd" name="align"/>
+            <label for="alignEnd">End</label>
+            <input type="radio" id="alignCenter" name="align"/>
+            <label for="alignCenter">Center</label>
+            <input type="radio" id="alignStretch" name="align"/>
+            <label for="alignStretch">Stretch</label>
+        </span>
+        <span id="links">
+            <h2>Additional reading</h3>
+            <a href="https://www.freecodecamp.org/news/css-grid-tutorial-with-cheatsheet/"> Great overview by FreeCodeCamp</a>
+            <br>
+            <a href="https://www.digitalocean.com/community/tutorials/css-align-justify">Align and Justify by Digital ocean </a>
+        </span>
+
+    </div>
+</body>
+</html>
