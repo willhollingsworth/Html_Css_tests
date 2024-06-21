@@ -1,9 +1,17 @@
+A series of different experiments using various web technologies.
+
+## JavaScript
+
+* [Spirals](https://willhollingsworth.github.io/Web_Experiments/js/shapes/spiral/spiral.html)
+* [Field Validations](https://willhollingsworth.github.io/Web_Experiments/js/field_validations/index.html)
+
+## CSS
+
 #### Animations
 
 * [Moving border](https://willhollingsworth.github.io/Web_Experiments/animations/moving_border.html)
 * [Spinning Circle](https://willhollingsworth.github.io/Web_Experiments/animations/spinning_circle.html)
 * [Spinning Circles](https://willhollingsworth.github.io/Web_Experiments/animations/spinning_circles/spinning_circles.html)
-
 
 #### Pseudo Elements
 
@@ -25,7 +33,3 @@
 * [Gradient Text](https://willhollingsworth.github.io/Web_Experiments/text/gradient_text.html)
   
 
-#### JavaScript
-
-* [Spirals](https://willhollingsworth.github.io/Web_Experiments/js/shapes/spiral/spiral.html)
-* [Field Validations](https://willhollingsworth.github.io/Web_Experiments/js/field_validations/index.html)
