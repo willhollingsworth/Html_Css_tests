@@ -1,11 +1,13 @@
-const btn = document.querySelector('#btn');        
+
+
+// grab all radio type inputs
 const radioButtons = document.querySelectorAll('input[type="radio"]');
-
-
+// add event listeners to all radio inputs
 radioButtons.forEach(elem =>
-    elem.addEventListener("change",  function(e) { console.log(e.target.id);})
+    elem.addEventListener("change",  event => reportValue(event))
 );
 
-// function reportValue(value) {
-//     console.log(value);
-// }
+
+function reportValue(value) {
+    console.log(value.target.id);
+}
