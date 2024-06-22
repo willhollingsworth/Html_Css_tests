@@ -29,6 +29,8 @@ body {
     width: 5vmax;
     height: 5vmax;
     text-align: center;
+    display: grid;
+    place-items: center;
 }
 #toolbar{
     display: grid;
