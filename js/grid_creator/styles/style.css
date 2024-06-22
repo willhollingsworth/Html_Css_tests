@@ -34,14 +34,13 @@ body {
 }
 #toolbar{
     display: grid;
-    align-content: start;
     justify-self: right;
     border: 2px solid #000;
     padding: 4px;
 }
-h4{
-    margin-bottom: 4px;
-}
 #links {
     align-self: end;
+}
+h1, h2, h4, a{
+    margin: .5vh;
 }

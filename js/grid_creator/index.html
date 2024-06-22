@@ -21,39 +21,48 @@
             <div>9</div>
         </div>
         <div id="toolbar">
-            <h1>Grid Properties</h1>
-            <span>
-                <!-- <label for="columns">Columns: </label> -->
-                <!-- <input type="number" name="columns" min="0" value="3"/> -->
+            <span id="gridProperties">
+                <h1>Grid Properties</h1>
+                <span>
+                    <!-- <label for="columns">Columns: </label> -->
+                    <!-- <input type="number" name="columns" min="0" value="3"/> -->
+                </span>
+                <form id="formJustify">
+                    <h4>Justify Items (Horizontal)</h4>
+                    <input type="radio" id="jusStart" value="start" name="justify"/>
+                    <label for="jusStart">Start</label>
+                    <input type="radio" id="jusCenter" value="center" name="justify" checked/>
+                    <label for="jusCenter">Center</label>
+                    <input type="radio" id="jusEnd" value="end" name="justify"/>
+                    <label for="jusEnd">End</label>
+                    <!-- <input type="radio" id="jusStretch" value="stretch" name="justify"/> -->
+                    <!-- <label for="jusStretch">Stretch</label> -->
+                </form>
+                <form id="formAlign">
+                    <h4>Align Items (Vertical)</h4>
+                    <input type="radio" id="alignStart" value="start" name="align"/>
+                    <label for="alignStart">Start</label>
+                    <input type="radio" id="alignCenter" value="center" name="align" checked/>
+                    <label for="alignCenter">Center</label>
+                    <input type="radio" id="alignEnd" value="end" name="align"/>
+                    <label for="alignEnd">End</label>
+                    <!-- <input type="radio" id="alignStretch" value="stretch" name="align"/> -->
+                    <!-- <label for="alignStretch">Stretch</label> -->
+                </form>
             </span>
-            <form id="formJustify">
-                <h4>Justify Items (Horizontal)</h4>
-                <input type="radio" id="jusStart" value="start" name="justify"/>
-                <label for="jusStart">Start</label>
-                <input type="radio" id="jusCenter" value="center" name="justify" checked/>
-                <label for="jusCenter">Center</label>
-                <input type="radio" id="jusEnd" value="end" name="justify"/>
-                <label for="jusEnd">End</label>
-                <!-- <input type="radio" id="jusStretch" value="stretch" name="justify"/> -->
-                <!-- <label for="jusStretch">Stretch</label> -->
-            </form>
-            <form id="formAlign">
-                <h4>Align Items (Vertical)</h4>
-                <input type="radio" id="alignStart" value="start" name="align"/>
-                <label for="alignStart">Start</label>
-                <input type="radio" id="alignCenter" value="center" name="align" checked/>
-                <label for="alignCenter">Center</label>
-                <input type="radio" id="alignEnd" value="end" name="align"/>
-                <label for="alignEnd">End</label>
-                <!-- <input type="radio" id="alignStretch" value="stretch" name="align"/> -->
-                <!-- <label for="alignStretch">Stretch</label> -->
-            </form>
             <span id="links">
-                <h2>Additional reading</h3>
-                <a href="https://www.freecodecamp.org/news/css-grid-tutorial-with-cheatsheet/"> Great overview by FreeCodeCamp</a>
-                <br>
-                <a href="https://www.digitalocean.com/community/tutorials/css-align-justify">Align and Justify by Digital ocean </a>
-            </span>
+                <h1>Links</h1>
+                <h4>Additional Resources</h3>
+                    <a href="https://www.freecodecamp.org/news/css-grid-tutorial-with-cheatsheet/"> Great overview by FreeCodeCamp</a>
+                    <br>
+                    <a href="https://www.digitalocean.com/community/tutorials/css-align-justify">Align and Justify by Digital ocean </a>
+                <h4>Alternative tools</h3>
+                    <a href="https://layout.bradwoods.io/customize">Braywood's tool</a>
+                    <br>
+                    <a href="https://grid.layoutit.com">layoutIt's tool</a>
+                    <br>
+                    <a href="https://www.cssportal.com/css-grid-generator/">Cssportal's tool</a>
+            </span>  
         </div>
     </div>
 </body>
