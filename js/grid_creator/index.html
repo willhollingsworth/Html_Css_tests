@@ -8,49 +8,53 @@
     <script src="scripts/script.js" defer></script>
 </head>
 <body>
-    <div id="grid">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-    </div>
-    <div id="toolbar">
-        <h1>Grid Properties</h1>
-        <span>
-            <label for="columns">Columns: </label>
-            <input type="number" name="columns" />
-        </span>
-        <form id="formJustify">
-            <h4>Justify Items</h4>
-            <input type="radio" id="jusStart" value="start" name="justify"/>
-            <label for="jusStart">Start</label>
-            <input type="radio" id="jusEnd" value="end" name="justify"/>
-            <label for="jusEnd">End</label>
-            <input type="radio" id="jusCenter" value="center" name="justify"/>
-            <label for="jusCenter">Center</label>
-            <input type="radio" id="jusStretch" value="stretch" name="justify"/>
-            <label for="jusStretch">Stretch</label>
-        </form>
-        <form id="formAlign">
-            <h4>Align Items</h4>
-            <input type="radio" id="alignStart" value="start" name="align"/>
-            <label for="alignStart">Start</label>
-            <input type="radio" id="alignEnd" value="end" name="align"/>
-            <label for="alignEnd">End</label>
-            <input type="radio" id="alignCenter" value="center" name="align"/>
-            <label for="alignCenter">Center</label>
-            <input type="radio" id="alignStretch" value="stretch" name="align"/>
-            <label for="alignStretch">Stretch</label>
-        </form>
-        <span id="links">
-            <h2>Additional reading</h3>
-            <a href="https://www.freecodecamp.org/news/css-grid-tutorial-with-cheatsheet/"> Great overview by FreeCodeCamp</a>
-            <br>
-            <a href="https://www.digitalocean.com/community/tutorials/css-align-justify">Align and Justify by Digital ocean </a>
-        </span>
-
+    <div id="container">
+        <div id="grid">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+        </div>
+        <div id="toolbar">
+            <h1>Grid Properties</h1>
+            <span>
+                <label for="columns">Columns: </label>
+                <input type="number" name="columns" min="0" value="3"/>
+            </span>
+            <form id="formJustify">
+                <h4>Justify Items (Horizontal)</h4>
+                <input type="radio" id="jusStart" value="start" name="justify"/>
+                <label for="jusStart">Start</label>
+                <input type="radio" id="jusEnd" value="end" name="justify"/>
+                <label for="jusEnd">End</label>
+                <input type="radio" id="jusCenter" value="center" name="justify"/>
+                <label for="jusCenter">Center</label>
+                <input type="radio" id="jusStretch" value="stretch" name="justify"/>
+                <label for="jusStretch">Stretch</label>
+            </form>
+            <form id="formAlign">
+                <h4>Align Items (Vertical)</h4>
+                <input type="radio" id="alignStart" value="start" name="align"/>
+                <label for="alignStart">Start</label>
+                <input type="radio" id="alignEnd" value="end" name="align"/>
+                <label for="alignEnd">End</label>
+                <input type="radio" id="alignCenter" value="center" name="align"/>
+                <label for="alignCenter">Center</label>
+                <input type="radio" id="alignStretch" value="stretch" name="align"/>
+                <label for="alignStretch">Stretch</label>
+            </form>
+            <span id="links">
+                <h2>Additional reading</h3>
+                <a href="https://www.freecodecamp.org/news/css-grid-tutorial-with-cheatsheet/"> Great overview by FreeCodeCamp</a>
+                <br>
+                <a href="https://www.digitalocean.com/community/tutorials/css-align-justify">Align and Justify by Digital ocean </a>
+            </span>
+        </div>
     </div>
 </body>
 </html>
