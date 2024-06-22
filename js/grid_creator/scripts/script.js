@@ -1,3 +1,11 @@
+// TODO: Build out ui radio boxes programmatically with code and a simple object
+// TODO: build better/ more automated radio value grabbing and style setting logic
+//          - rely less on static set values except where defined in an object
+// 
+// other similar tools
+// https://layout.bradwoods.io/customize
+// https://grid.layoutit.com/
+// https://www.cssportal.com/css-grid-generator/
 
 
 // grab all radio type inputs
