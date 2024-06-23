@@ -71,3 +71,6 @@ form input:checked {
 form input:before {
 	content: attr(value);
 }
+[name="columns"] {
+width: 3vw;
+}
