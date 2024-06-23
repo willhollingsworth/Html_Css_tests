@@ -79,14 +79,16 @@ form input:checked {
 form input:before {
 	content: attr(value);
 }
-#columns {
-width: 2rem;
+input[type="number"] {
+width: 3rem;
 background-color: #00000022;
 border: 0px;
 border-radius: 3px;
 text-align: center;
 margin: 3px;
 }
+
+
 #columnsLabel {
     font-weight: bold;
     font-size: 1em;
