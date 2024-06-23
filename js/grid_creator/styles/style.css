@@ -42,15 +42,26 @@ body {
     align-self: end;
 }
 h1, h2, h4, a{
-    margin: .5vh;
+    margin: .7vh;
+    margin-bottom: .2vh;
 }
 form{
-    background-color: rgba(38, 104, 198, 0.521);
+    background-color: rgba(38, 105, 198, 0.31);
+    width: 80%;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 form input {
 	width: auto;
 	height: 100%;
 	appearance: none;
+    transition: all 300ms linear;
+    padding: 0px 4px;
+
 }
 form input:checked {
 	color: #fff;
