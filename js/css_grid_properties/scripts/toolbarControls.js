@@ -14,6 +14,12 @@ radioButtons.forEach(elem =>
 gridElement = document.querySelector("#grid");
 
 function radioEvent(event){
+    // set columns
+    let columnElement = document.querySelector("#columns");
+    let columnValue = columnElement.value;
+    let columnsString = `repeat(${columnValue}, 1fr)`
+    changeStyle(columnsString, "grid-template-columns")
+
     // set justify
     let justifyFormElement = document.querySelector("#formJustify");
     let justifyValue = justifyFormElement.elements['justify'].value;
