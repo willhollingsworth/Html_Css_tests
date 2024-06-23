@@ -44,3 +44,19 @@ body {
 h1, h2, h4, a{
     margin: .5vh;
 }
+form{
+    background-color: rgba(38, 104, 198, 0.521);
+}
+form input {
+	width: auto;
+	height: 100%;
+	appearance: none;
+}
+form input:checked {
+	color: #fff;
+	text-shadow: 0 1px 0px #5a30447a;
+}
+
+form input:before {
+	content: attr(value);
+}

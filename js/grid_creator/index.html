@@ -23,31 +23,21 @@
         <div id="toolbar">
             <span id="gridProperties">
                 <h1>Grid Properties</h1>
-                <span>
+                <!-- <span> -->
                     <!-- <label for="columns">Columns: </label> -->
                     <!-- <input type="number" name="columns" min="0" value="3"/> -->
-                </span>
+                <!-- </span> -->
+                <h4>Justify Items (Horizontal)</h4>
                 <form id="formJustify">
-                    <h4>Justify Items (Horizontal)</h4>
-                    <input type="radio" id="jusStart" value="start" name="justify"/>
-                    <label for="jusStart">Start</label>
-                    <input type="radio" id="jusCenter" value="center" name="justify" checked/>
-                    <label for="jusCenter">Center</label>
-                    <input type="radio" id="jusEnd" value="end" name="justify"/>
-                    <label for="jusEnd">End</label>
-                    <!-- <input type="radio" id="jusStretch" value="stretch" name="justify"/> -->
-                    <!-- <label for="jusStretch">Stretch</label> -->
+                    <input type="radio" value="Start" name="justify"/>
+                    <input type="radio" value="Center" name="justify" checked/>
+                    <input type="radio" value="End" name="justify"/>
                 </form>
+                <h4>Align Items (Vertical)</h4>
                 <form id="formAlign">
-                    <h4>Align Items (Vertical)</h4>
-                    <input type="radio" id="alignStart" value="start" name="align"/>
-                    <label for="alignStart">Start</label>
-                    <input type="radio" id="alignCenter" value="center" name="align" checked/>
-                    <label for="alignCenter">Center</label>
-                    <input type="radio" id="alignEnd" value="end" name="align"/>
-                    <label for="alignEnd">End</label>
-                    <!-- <input type="radio" id="alignStretch" value="stretch" name="align"/> -->
-                    <!-- <label for="alignStretch">Stretch</label> -->
+                    <input type="radio" value="start" name="align"/>
+                    <input type="radio" value="center" name="align" checked/>
+                    <input type="radio" value="end" name="align"/>
                 </form>
             </span>
             <span id="links">
