@@ -23,10 +23,18 @@
         <div id="toolbar">
             <span id="gridProperties">
                 <h1>Grid Properties</h1>
+
                 <span id="columnsSpan">
                     <label for="columns">Columns: </label id="columnsLabel">
                     <input type="number" name="columns" min="1" value="3" id="columns"/>
                 </span>
+                <h4>Column Size</h4>
+                <form id="formColumnSize">
+                    <input type="radio" value="1FR" name="columnSize"/>
+                    <input type="radio" value="Percent" name="columnSize" checked/>
+                    <input type="number" min="0" value="10" name="columnSize" id="columnSizeNumber"/>
+                </form>
+
                 <h4>Justify Items (Horizontal)</h4>
                 <form id="formJustify">
                     <input type="radio" value="Start" name="justify"/>

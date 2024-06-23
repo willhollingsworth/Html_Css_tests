@@ -14,11 +14,23 @@ radioButtons.forEach(elem =>
 gridElement = document.querySelector("#grid");
 
 function radioEvent(event){
-    // set columns
-    let columnElement = document.querySelector("#columns");
-    let columnValue = columnElement.value;
-    let columnsString = `repeat(${columnValue}, 10%)`
-    changeStyle(columnsString, "grid-template-columns")
+    // get column count
+    let columnCountElement = document.querySelector("#columns");
+    let columnCountValue = columnCountElement.value;
+    // get column size type
+    let columnSizeElement = document.querySelector("#formColumnSize");
+    let columnSizeValue = columnSizeElement.elements['columnSize'].value;
+    //get column size value 
+    let columnSizeNumberElement = document.querySelector("#columnSizeNumber");
+    let columnSizeNumberValue = columnSizeNumberElement.value;
+
+    
+
+    if  (columnSizeValue == "Percent"){
+        columnSizeValue = `${columnSizeNumberValue}%`
+    }
+    let columnsCountString = `repeat(${columnCountValue}, ${columnSizeValue})`
+    changeStyle(columnsCountString, "grid-template-columns")
 
     // set justify items
     let justifyFormElement = document.querySelector("#formJustify");
