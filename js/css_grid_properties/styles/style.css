@@ -25,10 +25,12 @@ body {
 #grid{
     width: 60vw;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 10%);
     border: 3px solid #13ff1377;
     justify-items: center;
     align-items: center;
+    justify-content: center;
+    align-content: center;
 }
 #grid > div{
     border: 2px solid #38a9ff77;

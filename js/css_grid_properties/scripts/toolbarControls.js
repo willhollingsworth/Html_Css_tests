@@ -17,18 +17,31 @@ function radioEvent(event){
     // set columns
     let columnElement = document.querySelector("#columns");
     let columnValue = columnElement.value;
-    let columnsString = `repeat(${columnValue}, 1fr)`
+    let columnsString = `repeat(${columnValue}, 10%)`
     changeStyle(columnsString, "grid-template-columns")
 
-    // set justify
+    // set justify items
     let justifyFormElement = document.querySelector("#formJustify");
     let justifyValue = justifyFormElement.elements['justify'].value;
     changeStyle(justifyValue, "justify-items")
 
-    // set align
+    // set align items
     let alignFormElement = document.querySelector("#formAlign");
     let alignValue = alignFormElement.elements['align'].value;
     changeStyle(alignValue, "align-items")
+
+    // set justify content
+    let justifyContentFormElement = document.querySelector("#formJustifyContent");
+    let justifyContentValue = justifyContentFormElement.elements['justifyContent'].value;
+    changeStyle(justifyContentValue, "justify-content")
+
+    // set align content
+    let alignContentFormElement = document.querySelector("#formAlignContent");
+    let alignContentValue = alignContentFormElement.elements['alignContent'].value;
+    changeStyle(alignContentValue, "align-content")
+
+
+
 }
 
 
