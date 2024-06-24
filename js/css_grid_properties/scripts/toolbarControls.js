@@ -6,15 +6,15 @@
 const radioButtons = document.querySelectorAll('input');
 // add event listeners to all radio inputs
 radioButtons.forEach(elem =>
-    elem.addEventListener("change",  event => radioEvent(event))
+    elem.addEventListener("change",  event => inputEvent(event))
 );
 
 // select grid element to later manipulate
 gridElement = document.querySelector("#grid");
 
-function radioEvent(event){
+function inputEvent(event){
     // get column count
-    let columnCountValue = getSimpleValue("columns");
+    let columnCountValue = getSimpleValue("columnsCount");
     // get column size type
     let columnSizeValue = getRadioValue("formColumnSize");
     // get column size value 
@@ -45,14 +45,16 @@ function radioEvent(event){
 }
 
 function changeStyle(value,style) {
-    // console.log("change stye " + style +" to :" + value);
+    console.log("change stye " + style +" to :" + value);
     gridElement.style[style] = value;
 }
+
 function getSimpleValue(className) {
     let element = document.querySelector("#" + className);
     let value = element.value;
     return value;
 }
+
 function getRadioValue(className) {
     let element = document.querySelector("#" + className);
     let name = element[0].name;
