@@ -13,6 +13,11 @@ radioButtons.forEach(elem =>
 gridElement = document.querySelector("#grid");
 
 function inputEvent(event){
+    controlSubToolbar();
+    changeGridProperties();
+}
+
+function changeGridProperties(){
     // get column count
     let columnCountValue = getSimpleValue("columnsCount");
     // get column size type
@@ -42,6 +47,16 @@ function inputEvent(event){
     // get and set align content
     let alignContentValue = getRadioValue("formAlignContent")
     changeStyle(alignContentValue, "align-content")
+}
+
+function controlSubToolbar(){
+    let columnsState = getRadioValue("formColumnControl");
+    console.log("columnsState", columnsState);
+    if (columnsState == "auto"){
+        let element = document.querySelector("#columnCount")
+        element.disable = true;
+    }
+
 }
 
 function changeStyle(value,style) {
