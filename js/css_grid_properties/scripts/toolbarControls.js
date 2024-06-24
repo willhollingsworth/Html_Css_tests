@@ -14,14 +14,11 @@ gridElement = document.querySelector("#grid");
 
 function radioEvent(event){
     // get column count
-    let columnCountElement = document.querySelector("#columns");
-    let columnCountValue = columnCountElement.value;
+    let columnCountValue = getSimpleValue("columns");
     // get column size type
-    let columnSizeElement = document.querySelector("#formColumnSize");
-    let columnSizeValue = columnSizeElement.elements['columnSize'].value;
+    let columnSizeValue = getRadioValue("formColumnSize");
     // get column size value 
-    let columnSizeNumberElement = document.querySelector("#columnSizeNumber");
-    let columnSizeNumberValue = columnSizeNumberElement.value;
+    let columnSizeNumberValue = getSimpleValue("columnSizeNumber")
     // set percent format 
     if  (columnSizeValue == "Percent"){
         columnSizeValue = `${columnSizeNumberValue}%`
@@ -31,27 +28,34 @@ function radioEvent(event){
     changeStyle(columnsCountString, "grid-template-columns")
 
     // get and set justify items
-    let justifyFormElement = document.querySelector("#formJustify");
-    let justifyValue = justifyFormElement.elements['justify'].value;
+    let justifyValue = getRadioValue("formJustify")
     changeStyle(justifyValue, "justify-items")
 
     // get and set align items
-    let alignFormElement = document.querySelector("#formAlign");
-    let alignValue = alignFormElement.elements['align'].value;
+    let alignValue = getRadioValue("formAlign")
     changeStyle(alignValue, "align-items")
 
     // get and set justify content
-    let justifyContentFormElement = document.querySelector("#formJustifyContent");
-    let justifyContentValue = justifyContentFormElement.elements['justifyContent'].value;
+    let justifyContentValue = getRadioValue("formJustifyContent")
     changeStyle(justifyContentValue, "justify-content")
 
     // get and set align content
-    let alignContentFormElement = document.querySelector("#formAlignContent");
-    let alignContentValue = alignContentFormElement.elements['alignContent'].value;
+    let alignContentValue = getRadioValue("formAlignContent")
     changeStyle(alignContentValue, "align-content")
 }
 
 function changeStyle(value,style) {
-    console.log("change stye " + style +" to :" + value);
+    // console.log("change stye " + style +" to :" + value);
     gridElement.style[style] = value;
+}
+function getSimpleValue(className) {
+    let element = document.querySelector("#" + className);
+    let value = element.value;
+    return value;
+}
+function getRadioValue(className) {
+    let element = document.querySelector("#" + className);
+    let name = element[0].name;
+    let value = element.elements[name].value;
+    return value;
 }
