@@ -23,18 +23,24 @@
         <div id="toolbar">
             <span id="gridProperties">
                 <h1>Grid Properties</h1>
-
-                <span id="columnsSpan">
-                    <label for="columns">Columns: </label id="columnsLabel">
-                    <input type="number" name="columns" min="1" value="3" id="columns"/>
-                </span>
-                <h4>Column Size</h4>
-                <form id="formColumnSize">
-                    <input type="radio" value="1FR" name="columnSize"/>
-                    <input type="radio" value="Percent" name="columnSize" checked/>
-                    <input type="number" min="0" value="10" name="columnSize" id="columnSizeNumber"/>
-                </form>
-
+                <fieldset>
+                    <legend><h2>Columns</h2></legend>
+                    <h4>Column Control</h4>
+                    <form id="formColumnControl">
+                        <input type="radio" value="Auto" name="columnControl"/>
+                        <input type="radio" value="Manual" name="columnControl" checked/>
+                    </form>
+                    <span id="columnsSpan">
+                        <label for="columns"><h4>Columns Count</h4></label id="columnsLabel">
+                        <input type="number" name="columns" min="1" value="3" id="columnsCount"/>
+                    </span>
+                    <h4>Column Size</h4>
+                    <form id="formColumnSize">
+                        <input type="radio" value="1FR" name="columnSize"/>
+                        <input type="radio" value="Percent" name="columnSize" checked/>
+                        <input type="number" min="0" value="10" name="columnSize" id="columnSizeNumber"/>
+                    </form>
+                </fieldset>
                 <h4>Justify Items (Horizontal)</h4>
                 <form id="formJustify">
                     <input type="radio" value="Start" name="justify"/>
@@ -67,6 +73,7 @@
                     <input type="radio" value="Space-Around" name="alignContent"/>
                     <input type="radio" value="Space-Evenly" name="alignContent"/>
                 </form>
+            
             </span>
             <span id="links">
                 <h1>Links</h1>
