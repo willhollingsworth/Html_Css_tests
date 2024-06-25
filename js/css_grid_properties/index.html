@@ -38,6 +38,21 @@
                         <input type="number" min="0" value="10" name="columnSize" id="columnSizeNumber"/>
                     </form>
                 </fieldset>
+                <fieldset id="rowsFieldset">
+                    <legend><h2>Rows</h2></legend>
+                    <input type="checkbox" id="rowsEnable">
+                    <label for="rowsEnable">Enabled</label>
+                    <span id="rowsSpan">
+                        <label for="rows"><h4>Rows Count</h4></label id="rowsLabel">
+                        <input type="number" name="rows" min="1" value="3" id="rowsCount"/>
+                    </span>
+                    <h4>Row Size</h4>
+                    <form id="formrowSize">
+                        <input type="radio" value="1FR" name="rowSize"/>
+                        <input type="radio" value="Percent" name="rowSize" checked/>
+                        <input type="number" min="0" value="10" name="rowSize" id="rowSizeNumber"/>
+                    </form>
+                </fieldset>
                 <h4>Justify Items (Horizontal)</h4>
                 <form id="formJustify">
                     <input type="radio" value="Start" name="justify"/>
