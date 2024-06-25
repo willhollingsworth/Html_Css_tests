@@ -23,12 +23,10 @@
         <div id="toolbar">
             <span id="gridProperties">
                 <h1>Grid Properties</h1>
-                <fieldset>
+                <fieldset id="columnsFieldset">
                     <legend><h2>Columns</h2></legend>
-                    <form id="formColumnControl">
-                        <input type="radio" value="Auto" name="columnControl"/>
-                        <input type="radio" value="Manual" name="columnControl" checked/>
-                    </form>
+                    <input type="checkbox" id="columnsEnable" checked>
+                    <label for="columnsEnable">Enabled</label>
                     <span id="columnsSpan">
                         <label for="columns"><h4>Columns Count</h4></label id="columnsLabel">
                         <input type="number" name="columns" min="1" value="3" id="columnsCount"/>
