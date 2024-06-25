@@ -30,6 +30,7 @@ body {
     align-items: center;
     justify-content: center;
     align-content: center;
+    overflow: hidden;
 }
 #grid > div{
     border: 2px solid #38a9ff77;
@@ -51,6 +52,11 @@ body {
 h1, h2, h4, a{
     margin: .7vh;
     margin-bottom: .2vh;
+}
+h2 {
+    background-color: rgba(147,240,255,1) ;
+    padding: 0 1rem;
+    border-radius: 1rem;
 }
 form {
     background-color: rgba(38, 105, 198, 0.31);
@@ -118,7 +124,7 @@ opacity: 0;
 /* set styling for enabled and disabled boxes */
 input[type="checkbox"] + label, input[type="checkbox"] + label::before {
     user-select: none;
-    padding: .2em 1em;
+    padding: 0em 1em;
     border-radius: 1em;
 }
 /* disabled state */
@@ -146,7 +152,7 @@ input[type="checkbox"]:checked + label::before {
 
 /* set up visual disable logic */
 fieldset:has(input[type="checkbox"]){
-    background: #0003;
+    background: rgba(51, 51, 51, 0.815);
 }
 fieldset:has(input[type="checkbox"]:checked){
     background: transparent;
