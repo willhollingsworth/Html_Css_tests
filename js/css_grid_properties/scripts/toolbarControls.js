@@ -13,25 +13,12 @@ radioButtons.forEach(elem =>
 gridElement = document.querySelector("#grid");
 
 function inputEvent(event){
-    controlSubToolbar();
     changeGridProperties();
 }
 
 function changeGridProperties(){
-    // get column count
-    let columnCountValue = getSimpleValue("columnsCount");
-    // get column size type
-    let columnSizeValue = getRadioValue("formColumnSize");
-    // get column size value 
-    let columnSizeNumberValue = getSimpleValue("columnSizeNumber")
-    // set percent format 
-    if  (columnSizeValue == "Percent"){
-        columnSizeValue = `${columnSizeNumberValue}%`
-    }
-    // build and use column size and count values
-    let columnsCountString = `repeat(${columnCountValue}, ${columnSizeValue})`
-    changeStyle(columnsCountString, "grid-template-columns")
-
+    changeColumns()
+    changeRows()
     // get and set justify items
     let justifyValue = getRadioValue("formJustify")
     changeStyle(justifyValue, "justify-items")
@@ -49,18 +36,52 @@ function changeGridProperties(){
     changeStyle(alignContentValue, "align-content")
 }
 
-function controlSubToolbar(){
-    let columnsState = getRadioValue("formColumnControl");
-    console.log("columnsState", columnsState);
-    if (columnsState == "auto"){
-        let element = document.querySelector("#columnCount")
-        element.disable = true;
+function changeColumns(){
+    let columnsState = getCheckBoxValue("columnsEnable");
+    if (columnsState) {
+        // get column count
+        let columnCountValue = getSimpleValue("columnsCount");
+        // get column size type
+        let columnSizeValue = getRadioValue("formColumnSize");
+        // get column size value 
+        let columnSizeNumberValue = getSimpleValue("columnSizeNumber")
+        // set percent format 
+        if  (columnSizeValue == "Percent"){
+            columnSizeValue = `${columnSizeNumberValue}%`
+        }
+        // build and use column size and count values
+        let columnsCountString = `repeat(${columnCountValue}, ${columnSizeValue})`
+        changeStyle(columnsCountString, "grid-template-columns")
+    } else {
+        // set to default
+        changeStyle("revert", "grid-template-columns")
     }
+}
 
+function changeRows(){
+    let rowsState = getCheckBoxValue("rowsEnable");
+    if (rowsState) {
+        // get row count
+        let rowCountValue = getSimpleValue("rowsCount");
+        // get row size type
+        let rowSizeValue = getRadioValue("formrowSize");
+        // get row size value 
+        let rowSizeNumberValue = getSimpleValue("rowSizeNumber")
+        // set percent format 
+        if  (rowSizeValue == "Percent"){
+            rowSizeValue = `${rowSizeNumberValue}%`
+        }
+        // build and use row size and count values
+        let rowsCountString = `repeat(${rowCountValue}, ${rowSizeValue})`
+        changeStyle(rowsCountString, "grid-template-rows")
+    } else {
+        // set to default
+        changeStyle("revert", "grid-template-rows")
+    }
 }
 
 function changeStyle(value,style) {
-    console.log("change stye " + style +" to :" + value);
+    // console.log("change stye " + style +" to :" + value);
     gridElement.style[style] = value;
 }
 
@@ -74,5 +95,11 @@ function getRadioValue(className) {
     let element = document.querySelector("#" + className);
     let name = element[0].name;
     let value = element.elements[name].value;
+    return value;
+}
+
+function getCheckBoxValue(className) {
+    let element = document.querySelector("#" + className);
+    let value = element.checked;
     return value;
 }
