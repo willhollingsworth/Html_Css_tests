@@ -132,3 +132,10 @@ input[type="checkbox"]:checked + label::before {
     /* hide disabled box */
     font-size: 0;
 }
+/* set up visual disable logic */
+fieldset:has(input[type="checkbox"]){
+    background: #0003;
+}
+fieldset:has(input[type="checkbox"]:checked){
+    background: transparent;
+}
