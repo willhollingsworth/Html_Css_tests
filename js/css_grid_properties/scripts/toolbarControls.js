@@ -106,7 +106,7 @@ function setGridOverlayDimensions(){
     } else {
         overlayWidth = gridWidth / getSimpleValue("columnsCount")
     }
-    if (!getCheckBoxValue("rowsEnable")){
+    if (!getCheckBoxValue("columnsEnable")){
         // if rows state is disabled set width to div size
         overlayWidth = document.querySelector("#grid > div").offsetWidth
     }
@@ -122,7 +122,7 @@ function setGridOverlayDimensions(){
         // if 1fr
         overlayHeight = gridHeight / getSimpleValue("rowsCount")
     }
-    if (!getCheckBoxValue("columnsEnable")){
+    if (!getCheckBoxValue("rowsEnable")){
         // if column state is disabled set height to div size
         overlayHeight = document.querySelector("#grid > div").offsetHeight
     }
