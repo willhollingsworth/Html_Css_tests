@@ -64,7 +64,7 @@ function changeRows(){
         // get row count
         let rowCountValue = getSimpleValue("rowsCount");
         // get row size type
-        let rowSizeValue = getRadioValue("formrowSize");
+        let rowSizeValue = getRadioValue("formRowSize");
         // get row size value 
         let rowSizeNumberValue = getSimpleValue("rowSizeNumber")
         // set percent format 
