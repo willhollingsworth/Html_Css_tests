@@ -46,7 +46,7 @@ body {
     content: "";
     width: attr(gridOverlayWidth);
     height: attr(gridOverlayHeight);
-    border: 1px solid pink;
+    border: 1px solid transparent;
     z-index: -1;
 }
 #toolbar{

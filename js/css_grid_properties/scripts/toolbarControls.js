@@ -20,6 +20,7 @@ gridElement = document.querySelector("#grid");
 function inputEvent(event){
     changeGridProperties();
     setGridOverlayDimensions();
+    setGridOverlayViability();
 }
 
 function changeGridProperties(){
@@ -127,6 +128,14 @@ function setGridOverlayDimensions(){
         overlayHeight = document.querySelector("#grid > div").offsetHeight
     }
     selectBeforeRule().style.height = Math.floor(overlayHeight) + "px"
+}
+
+function setGridOverlayViability(){
+    if (!getCheckBoxValue("overlayEnable")){
+        selectBeforeRule().style.border = "1px solid transparent"
+    } else {
+        selectBeforeRule().style.border = "1px solid pink"
+    }
 }
 
 function changeStyle(value,style) {
