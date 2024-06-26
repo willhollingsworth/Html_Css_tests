@@ -19,6 +19,7 @@ gridElement = document.querySelector("#grid");
 
 function inputEvent(event){
     changeGridProperties();
+    setGridOverlayDimensions();
 }
 
 function changeGridProperties(){
@@ -41,14 +42,6 @@ function changeGridProperties(){
     changeStyle(alignContentValue, "align-content")
 }
 
-function changeGridLinesWidth(value) {
-    selectBeforeRule().style.width = Math.floor(value) + "px"
-    console.log(value, Math.floor(value))
-}
-function changeGridLinesHeight(value) {
-    selectBeforeRule().style.height = Math.floor(value) + "px"
-}
-
 function selectBeforeRule(){
     let cssRules = document.styleSheets[0].cssRules
     let beforeRule
@@ -60,11 +53,8 @@ function selectBeforeRule(){
     return beforeRule
 }
 
-
 function changeColumns(){
     let columnsState = getCheckBoxValue("columnsEnable");
-    let overlayWidth = 0;
-    let gridWidth = document.querySelector("#grid").offsetWidth;
     if (columnsState) {
         // get column count
         let columnCountValue = getSimpleValue("columnsCount");
@@ -75,9 +65,6 @@ function changeColumns(){
         // set percent format 
         if  (columnSizeValue == "Percent"){
             columnSizeValue = `${columnSizeNumberValue}%`
-            overlayWidth = gridWidth * columnSizeNumberValue / 100;
-        } else {
-            overlayWidth = gridWidth / columnCountValue
         }
         // build and use column size and count values
         let columnsCountString = `repeat(${columnCountValue}, ${columnSizeValue})`
@@ -85,15 +72,11 @@ function changeColumns(){
     } else {
         // set to default
         changeStyle("revert", "grid-template-columns")
-        overlayWidth = document.querySelector("#grid > div").offsetWidth
     }
-    changeGridLinesWidth(overlayWidth)
 }
 
 function changeRows(){
     let rowsState = getCheckBoxValue("rowsEnable");
-    let overlayHeight = 0;
-    let gridHeight = document.querySelector("#grid").offsetHeight;
     if (rowsState) {
         // get row count
         let rowCountValue = getSimpleValue("rowsCount");
@@ -104,21 +87,46 @@ function changeRows(){
         // set percent format 
         if  (rowSizeValue == "Percent"){
             rowSizeValue = `${rowSizeNumberValue}%`
-            overlayHeight = gridHeight * rowSizeNumberValue / 100;
-
-        } else {
-            overlayHeight = gridHeight / rowCountValue
         }
         // build and use row size and count values
         let rowsCountString = `repeat(${rowCountValue}, ${rowSizeValue})`
         changeStyle(rowsCountString, "grid-template-rows")
-
     } else {
         // set to default
         changeStyle("revert", "grid-template-rows")
+    }
+}
+
+function setGridOverlayDimensions(){
+    // Width and columns
+    let overlayWidth = 0;
+    let gridWidth = document.querySelector("#grid").offsetWidth;
+    if  (getRadioValue("formColumnSize") == "Percent"){
+        overlayWidth = gridWidth * getSimpleValue("columnSizeNumber") / 100;
+    } else {
+        overlayWidth = gridWidth / getSimpleValue("columnsCount")
+    }
+    if (!getCheckBoxValue("rowsEnable")){
+        // if rows state is disabled set width to div size
+        overlayWidth = document.querySelector("#grid > div").offsetWidth
+    }
+    selectBeforeRule().style.width = Math.floor(overlayWidth) + "px"
+
+    // Height / rows
+    let overlayHeight = 0;
+    let gridHeight = document.querySelector("#grid").offsetHeight;
+    if  (getRadioValue("formRowSize") == "Percent"){
+        // if manual percentage
+        overlayHeight = gridHeight * getSimpleValue("rowSizeNumber") / 100;
+    } else {
+        // if 1fr
+        overlayHeight = gridHeight / getSimpleValue("rowsCount")
+    }
+    if (!getCheckBoxValue("columnsEnable")){
+        // if column state is disabled set height to div size
         overlayHeight = document.querySelector("#grid > div").offsetHeight
     }
-    changeGridLinesHeight(overlayHeight)
+    selectBeforeRule().style.height = Math.floor(overlayHeight) + "px"
 }
 
 function changeStyle(value,style) {
