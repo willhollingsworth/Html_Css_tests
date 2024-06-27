@@ -115,7 +115,7 @@ function setGridOverlayDimensions(){
         // if rows state is disabled set width to div size
         overlayWidth = document.querySelector("#grid > div").offsetWidth
     }
-    selectBeforeRule().style.width = Math.floor(overlayWidth) + "px"
+    selectBeforeRule().style.width = overlayWidth + "px"
 
     // Height / rows
     let overlayHeight = 0;
@@ -131,7 +131,7 @@ function setGridOverlayDimensions(){
         // if column state is disabled set height to div size
         overlayHeight = document.querySelector("#grid > div").offsetHeight
     }
-    selectBeforeRule().style.height = Math.floor(overlayHeight) + "px"
+    selectBeforeRule().style.height = overlayHeight + "px"
 }
 
 function setGridOverlayOffsets(){
