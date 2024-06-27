@@ -21,10 +21,9 @@ gridElement = document.querySelector("#grid");
 
 function inputEvent(event){
     changeGridProperties();
-    setGridOverlayDimensions();
-    setGridOverlayOffsets();
-    setGridOverlayViability();
+    setGridOverlay();
 }
+
 
 function changeGridProperties(){
     changeColumns()
@@ -99,6 +98,12 @@ function changeRows(){
         // set to default
         changeStyle("revert", "grid-template-rows")
     }
+}
+
+function setGridOverlay(){
+    setGridOverlayDimensions();
+    setGridOverlayOffsets();
+    setGridOverlayViability();
 }
 
 function setGridOverlayDimensions(){
