@@ -103,9 +103,12 @@ function setGridOverlay(){
 }
 
 function setGridOverlayDimensions(){
+    // border size
+    overlayBordersize = 2
     // Width and columns
     let overlayWidth = 0;
     let gridWidth = document.querySelector("#grid").offsetWidth;
+
     if  (getRadioValue("formColumnSize") == "Percent"){
         overlayWidth = gridWidth * getSimpleValue("columnSizeNumber") / 100;
     } else {
@@ -115,7 +118,7 @@ function setGridOverlayDimensions(){
         // if rows state is disabled set width to div size
         overlayWidth = document.querySelector("#grid > div").offsetWidth
     }
-    selectBeforeRule().style.width = overlayWidth + "px"
+    selectBeforeRule().style.width = overlayWidth - overlayBordersize + "px"
 
     // Height / rows
     let overlayHeight = 0;
@@ -131,28 +134,30 @@ function setGridOverlayDimensions(){
         // if column state is disabled set height to div size
         overlayHeight = document.querySelector("#grid > div").offsetHeight
     }
-    selectBeforeRule().style.height = overlayHeight + "px"
+    selectBeforeRule().style.height = overlayHeight - overlayBordersize + "px"
 }
 
 function setGridOverlayOffsets(){
     // set grid overlay offsets 
+    // manually defined border size for children elements of grid
+    divBorderSize = 3
     // set horizontal offsets
     let justifyValue = getRadioValue("formJustify")
     selectBeforeRule().style.left = "initial"
     selectBeforeRule().style.right = "initial"
     if (justifyValue == "Start"){
-        selectBeforeRule().style.left = "0px"
+        selectBeforeRule().style.left = -divBorderSize + "px"
     } else if (justifyValue == "End"){
-        selectBeforeRule().style.right = "0px"
+        selectBeforeRule().style.right = -divBorderSize + "px"
     }
     // set vertical offsets
     let alignValue = getRadioValue("formAlign")
     selectBeforeRule().style.top = "initial"
     selectBeforeRule().style.bottom = "initial"
     if (alignValue == "Start"){
-        selectBeforeRule().style.top = "0px"
+        selectBeforeRule().style.top = -divBorderSize + "px"
     } else if (alignValue == "End"){
-        selectBeforeRule().style.bottom = "0px"
+        selectBeforeRule().style.bottom = -divBorderSize + "px"
     }
 }
 
