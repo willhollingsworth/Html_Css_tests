@@ -2,10 +2,6 @@
 // TODO: build better/ more automated radio value grabbing and style setting logic
 //          - rely less on static set values except where defined in an object
 //
-// FIXME: grid lines / overlays don't work when you change justify items/ align items
-
-
-
 
 // grab all radio type inputs
 const radioButtons = document.querySelectorAll('input');
@@ -23,7 +19,6 @@ function inputEvent(event){
     changeGridProperties();
     setGridOverlay();
 }
-
 
 function changeGridProperties(){
     changeColumns()
