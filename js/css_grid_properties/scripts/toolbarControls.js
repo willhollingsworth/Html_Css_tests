@@ -14,6 +14,8 @@ radioButtons.forEach(elem =>
     elem.addEventListener("change",  event => inputEvent(event))
 );
 
+window.addEventListener("resize",  event => inputEvent(event));
+
 // select grid element to later manipulate
 gridElement = document.querySelector("#grid");
 
