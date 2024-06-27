@@ -33,7 +33,7 @@ body {
     overflow: hidden;
 }
 #grid > div{
-    border: 4px solid #38a9ff77;
+    border: 2px solid #38a9ff77;
     width: 5vmax;
     height: 5vmax;
     text-align: center;

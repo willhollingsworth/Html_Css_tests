@@ -164,7 +164,7 @@ function setGridOverlayViability(){
     if (!getCheckBoxValue("overlayEnable")){
         selectBeforeRule().style.border = "1px solid transparent"
     } else {
-        selectBeforeRule().style.border = "1px solid pink"
+        selectBeforeRule().style.border = "1px solid #f005"
     }
 }
 
