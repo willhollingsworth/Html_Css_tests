@@ -18,6 +18,7 @@ gridElement = document.querySelector("#grid");
 function inputEvent(event){
     changeGridProperties();
     setGridOverlay();
+    setGridChildCount();
 }
 
 function changeGridProperties(){
@@ -160,6 +161,23 @@ function setGridOverlayViability(){
         selectBeforeRule().style.border = "1px solid transparent"
     } else {
         selectBeforeRule().style.border = "1px solid #f005"
+    }
+}
+
+function setGridChildCount(){
+    // set the number of grid elements / children
+    // grab element count
+    let childCount = getSimpleValue("gridElementCount")
+    // select grid
+    let parent = document.querySelector("#grid")
+    // delete all current children
+    parent.innerHTML = ""
+    // run a loop for each child
+    for (let i = 1; i <= childCount; i++) {
+        // create new child
+        newChild = document.createElement("div")
+        newChild.innerHTML = i
+        parent.appendChild(newChild)
     }
 }
 
