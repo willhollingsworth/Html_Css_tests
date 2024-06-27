@@ -39,6 +39,7 @@ body {
     text-align: center;
     display: grid;
     place-items: center;
+    position: relative;
 }
 /* grid overlay */
 #grid > div::before{

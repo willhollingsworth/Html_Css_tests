@@ -22,6 +22,7 @@ gridElement = document.querySelector("#grid");
 function inputEvent(event){
     changeGridProperties();
     setGridOverlayDimensions();
+    setGridOverlayOffsets();
     setGridOverlayViability();
 }
 
@@ -130,6 +131,28 @@ function setGridOverlayDimensions(){
         overlayHeight = document.querySelector("#grid > div").offsetHeight
     }
     selectBeforeRule().style.height = Math.floor(overlayHeight) + "px"
+}
+
+function setGridOverlayOffsets(){
+    // set grid overlay offsets 
+    // set horizontal offsets
+    let justifyValue = getRadioValue("formJustify")
+    selectBeforeRule().style.left = "initial"
+    selectBeforeRule().style.right = "initial"
+    if (justifyValue == "Start"){
+        selectBeforeRule().style.left = "0px"
+    } else if (justifyValue == "End"){
+        selectBeforeRule().style.right = "0px"
+    }
+    // set vertical offsets
+    let alignValue = getRadioValue("formAlign")
+    selectBeforeRule().style.top = "initial"
+    selectBeforeRule().style.bottom = "initial"
+    if (alignValue == "Start"){
+        selectBeforeRule().style.top = "0px"
+    } else if (alignValue == "End"){
+        selectBeforeRule().style.bottom = "0px"
+    }
 }
 
 function setGridOverlayViability(){
